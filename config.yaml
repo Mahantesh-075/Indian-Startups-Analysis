@@ -1,0 +1,85 @@
+# Configuration for Indian Startup Analysis Platform
+
+paths:
+  raw_data_dir: "data/raw"
+  cleaned_data_dir: "data/cleaned"
+  processed_data_dir: "data/processed"
+  models_dir: "src/models/weights"
+  reports_dir: "reports"
+  static_plots_dir: "reports/static_plots"
+
+files:
+  funding_raw: "startup_funding.csv"
+  gov_raw: "gov-data-final.csv"
+  funding_cleaned: "cleaned_funding.csv"
+  gov_cleaned: "cleaned_gov.csv"
+  processed_features: "processed_features.csv"
+  success_model: "success_classifier.joblib"
+  funding_model: "funding_regressor.joblib"
+  forecast_model: "forecast_arima.joblib"
+
+models:
+  random_state: 42
+  test_size: 0.2
+  n_estimators: 100
+
+nlp:
+  vader_lexicon_download: true
+
+industry_mapping:
+  "Transportation": "Logistics & Mobility"
+  "Logistics": "Logistics & Mobility"
+  "Automotive": "Logistics & Mobility"
+  "Aeronautics Aerospace & Defence": "DeepTech & Aerospace"
+  "AI": "AI & DeepTech"
+  "Robotics": "AI & DeepTech"
+  "Fintech": "FinTech"
+  "FinTech": "FinTech"
+  "Insurance": "FinTech"
+  "E-commerce": "E-Commerce & Retail"
+  "Retail": "E-Commerce & Retail"
+  "BigBasket": "E-Commerce & Retail"
+  "EdTech": "EdTech"
+  "Edtech": "EdTech"
+  "FoodTech": "FoodTech & AgriTech"
+  "Agriculture": "FoodTech & AgriTech"
+  "AgriTech": "FoodTech & AgriTech"
+  "Healthcare": "HealthTech & BioTech"
+  "HealthTech": "HealthTech & BioTech"
+  "CureFit": "HealthTech & BioTech"
+  "Gaming": "Media & Entertainment"
+  "Advertising": "Media & Entertainment"
+  "ShareChat": "Media & Entertainment"
+  "SaaS": "SaaS & Enterprise"
+  "Services": "SaaS & Enterprise"
+  "Telecommunication & Networking": "SaaS & Enterprise"
+  "Hospitality": "Travel & Hospitality"
+  "OYO Rooms": "Travel & Hospitality"
+  "Green Technology": "CleanTech & Green Energy"
+  "CleanTech": "CleanTech & Green Energy"
+  "Chemicals": "Industrial & Chemicals"
+  "Construction": "Real Estate & Construction"
+  "Architecture Interior Design": "Real Estate & Construction"
+
+states_and_regions:
+  North: ["Delhi", "Haryana", "Punjab", "Himachal Pradesh", "Jammu and Kashmir", "Uttar Pradesh", "Uttarakhand", "Chandigarh"]
+  South: ["Karnataka", "Tamil Nadu", "Andhra Pradesh", "Telangana", "Kerala", "Puducherry", "Lakshadweep"]
+  West: ["Maharashtra", "Gujarat", "Goa", "Rajasthan", "Dadra and Nagar Haveli and Daman and Diu"]
+  East: ["West Bengal", "Bihar", "Jharkhand", "Odisha"]
+  Central: ["Madhya Pradesh", "Chhattisgarh"]
+  Northeast: ["Assam", "Sikkim", "Arunachal Pradesh", "Meghalaya", "Manipur", "Mizoram", "Nagaland", "Tripura"]
+
+risk_weights:
+  market_risk: 0.15
+  financial_risk: 0.20
+  competition_risk: 0.15
+  regulatory_risk: 0.10
+  operational_risk: 0.15
+  technology_risk: 0.10
+  funding_risk: 0.15
+
+opportunity_weights:
+  growth_rate: 0.35
+  funding_velocity: 0.30
+  registered_density: 0.15
+  investor_interest: 0.20
